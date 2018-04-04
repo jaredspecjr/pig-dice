@@ -1,5 +1,8 @@
 function diceRoll(min, max) {
-  var result = Math.random() * (7 - 1) + 1;
-  return Math.round(result);
+  var roll = Math.random() * (6 - 1) + 1;
+  var result = Math.round(roll);
+  if (result === 1) {
+    return 0;
+  }
   console.log(result);
 }
