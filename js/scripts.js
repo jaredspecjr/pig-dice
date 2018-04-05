@@ -1,43 +1,64 @@
-var finalTotal = [];
-var playerTotal = [];
-var turnTotal = [];
+// var finalTotal = [];
+// var playerTotal = [];
+// var turnTotal = [];
 //change this VVVV
 function Athlete(title) {
   this.title = title;
-  this.diceRoll= turnTotal;
-  this.hold = playerTotal;
-  this.score = finalTotal;
+  this.roll = [];
+  this.playerScore = [];
+  this.turnTotal = 0;
 }
 //change this ^^^
-console.log(Athlete);
 
-function diceRoll(min, max) {
-  var roll = Math.random() * (6 - 1) + 1;
-  var result = Math.round(roll);
-  if (result === 1) {
-    turnTotal.length = 0;
-  } else {
-    turnTotal.push(result);
-  }
+var player1 = new Athlete("jared");
+var player2 = new Athlete("matt");
+Athlete.prototype.diceRoll = function() {
+  var random = Math.random() * (6 - 1) + 1;
+   this.roll = Math.round(random);
+   this.turnTotal = this.turnTotal += this.roll;
+  // if (this.roll === 1) {
+  //   turnTotal.length = 0;
+  //   this.roll = 0;
+  // } else {
+  //   turnTotal.push(this.roll);
+  //   // player1.roll.push(this.roll);
+  // }
+  console.log(player1.roll);
+  console.log(player2.roll);
 }
 
-function hold() {
-  var total=0;
-  for(i = 0; i < turnTotal.length; i++){
-    total += turnTotal[i];
-  }
-  return playerTotal.push(total);
+Athlete.prototype.hold = function() {
+
+  // for(i = 0; i < turnTotal.length; i++){
+  //   total += turnTotal[i];
+  //   this.turnTotal=total;
+  // }
+  // return this.turnTotal;
+  return this.turnTotal;
 }
 
-function score() {
-  var total=0;
-  for(i = 0; i < playerTotal.length; i++){
-    total += playerTotal[i];
-  }
-  var result = total;
-  if (result < 100) {
-    finalTotal.length = 0;
-  } else {
-    return finalTotal.push(total);
-  }
+Athlete.prototype.score = function() {
+
 }
+
+
+
+
+
+
+
+
+// Athlete.prototype.score = function() {
+//   var total=0;
+//   for(i = 0; i < this.playerScore.length; i++){
+//     total += this.playerScore[i];
+//   }
+//   return playerScore.push(this.turnTotal);
+//   var result = total;
+//   this.playerTotal = result;
+//   if (result < 100) {
+//     finalTotal.length = 0;
+//   } else {
+//     return finalTotal.push(total);
+//   }
+// }
