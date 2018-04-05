@@ -8,6 +8,43 @@
     <title></title>
   </head>
   <body>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-md">
+          <form id="form1">
+            <label for="name">Player 1 Name:</label>
+            <input  id="player1" type="text">
+            <button id="button1" type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+        <div class="col-md">
+          <form class="form2">
+            <label for="name">Player 2 Name:</label>
+            <input id ="player2" type="text">
+          </form>
+        </div>
+      </div>
+      <div id="row2" class="row">
+        <div class="col-md">
+          <h3>Player One</h3>
+          <div>
+            <button id="p1Roll" type="button" class="btn btn-success">Roll</button>
+            <button id="p1Hold" type="button" class="btn btn-danger">Hold</button>
+          </div>
+          <span id="player1roll"></span>
+          <span id="player1turn"></span>
+          <span id="player1hold"></span>
+        </div>
+        <div class="col-md">
+          <h3>Player Two</h3>
+          <div>
+            <button id="p2Roll"type="button" class="btn btn-success">Roll</button>
+            <button id="p2Hold"type="button" class="btn btn-danger">Hold</button>
+          </div>
+          <span id="player2roll"></span>
+          <span id="player2turn"></span>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
