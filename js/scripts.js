@@ -38,7 +38,7 @@ Athlete.prototype.hold = function() {
 }
 
 Athlete.prototype.score = function() {
-  if(this.playerScore >= 20) {
+  if(this.playerScore >= 100) {
     return true;
   } else {
     return false;
@@ -66,8 +66,8 @@ $(function() {
   $("#p1Hold").click(function(){
     player1.hold();
     $("#player1hold").text("Score:" + player1.playerScore);
-    //change this VV
-    if(player1.score() === false){
+    player1.score();
+    if(player1.score() === true){
       alert("you won yo");
     }
     //change this ^^
