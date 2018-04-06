@@ -52,6 +52,8 @@ $(function() {
     event.preventDefault();
     player1 = new Athlete($("input#player1").val());
     player2 = new Athlete($("input#player2").val());
+    $("#player1name").text($("input#player1").val());
+    $("#player2name").text($("input#player2").val());
   });
   $("#p1Roll").click(function(){
     player1.diceRoll();
@@ -70,9 +72,9 @@ $(function() {
     if(player1.score() === true){
       alert("you won yo");
     }
-    //change this ^^
   });
   $("#p2Hold").click(function(){
     player2.hold();
+    $("#player2hold").text("Score:" + player2.playerScore);
   });
 });
