@@ -1,6 +1,10 @@
 #button1{
-  margin-left: 80%;
+  float: right;
 }
 .p2buttons{
   display: none;
+}
+.well{
+  margin-top: 100px;
+  margin-bottom: 100px;
 }

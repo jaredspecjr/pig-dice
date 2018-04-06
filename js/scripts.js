@@ -1,15 +1,10 @@
-
-
+//Back-End Logic//
 function Athlete(title) {
   this.title = title;
   this.roll = 0;
   this.playerScore = 0;
   this.turnTotal = 0;
 }
-
-
-
-
 Athlete.prototype.diceRoll = function() {
   var random = Math.random() * (6 - 1) + 1;
    this.roll = Math.round(random);
@@ -20,12 +15,8 @@ Athlete.prototype.diceRoll = function() {
   } else {
     this.turnTotal = this.turnTotal += this.roll;
     return true;
-
-
   }
-
 }
-
 Athlete.prototype.hold = function() {
   if(this.turnTotal === 0) {
   return false
@@ -34,11 +25,9 @@ Athlete.prototype.hold = function() {
     this.turnTotal = 0;
     return true
   }
-
 }
-
 Athlete.prototype.score = function() {
-  if(this.playerScore >= 10) {
+  if(this.playerScore >= 100) {
     return true;
   } else {
     return false;
@@ -46,7 +35,7 @@ Athlete.prototype.score = function() {
 }
 
 
-
+//Front-End Logic//
 $(function() {
   $("#form1").submit(function(event){
     event.preventDefault();
@@ -59,7 +48,6 @@ $(function() {
     } else {
       $("#row1").hide();
     };
-
 
   });
   $("#p1Roll").click(function(){
